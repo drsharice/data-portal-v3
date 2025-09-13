@@ -1,12 +1,15 @@
-function Home() {
-  return (
-    <div className="text-center">
-      <h1 className="text-4xl font-bold text-blue-700 mb-4">Welcome to Data Portal v3</h1>
-      <p className="text-lg text-gray-700">
-        Use the menu above to explore Data, API documentation, and Catalog.
-      </p>
-    </div>
-  )
-}
+import { useTitle } from "../hooks/useTitle";
+import Hero from "../components/Hero";
+import ValueProp from "../components/ValueProp";
+import Portfolio from "../components/Portfolio";
 
-export default Home
+export default function Home() {
+  useTitle("Home | Data Portal");
+  return (
+    <>
+      <Hero />
+      <ValueProp />
+      <Portfolio />
+    </>
+  );
+}
