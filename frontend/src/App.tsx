@@ -1,10 +1,27 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Navbar from "./components/Navbar"
+import Home from "./pages/Home"
+import Data from "./pages/Data"
+import API from "./pages/API"
+import Catalog from "./pages/Catalog"
+import About from "./pages/About"
+
 function App() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold text-blue-600">
-        Hello, Data Portal v3 🚀
-      </h1>
-    </div>
+    <Router>
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-grow p-6 bg-gray-50">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/data" element={<Data />} />
+            <Route path="/api" element={<API />} />
+            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   )
 }
 
